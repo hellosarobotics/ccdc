@@ -16,6 +16,7 @@ public class CcdcController {
 	@RequestMapping(value = "/ccdc/{container_nr}", method = GET)
 	@ApiOperation(value = "Validate the container number.")
 	public boolean canCommunicate( @PathVariable( name = "container_nr" ) String containerNr) {
+		
 		return true;
 	}
 

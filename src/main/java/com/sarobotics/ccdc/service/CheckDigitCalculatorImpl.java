@@ -2,6 +2,9 @@ package com.sarobotics.ccdc.service;
 
 import java.util.HashMap;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class CheckDigitCalculatorImpl implements CheckDigitCalculator {
 	
 	private HashMap<String,Integer> step1 ;
@@ -86,6 +89,7 @@ public class CheckDigitCalculatorImpl implements CheckDigitCalculator {
 			checkDigit = sum-intValueTimes11;
 			
 			if(checkDigit>9){
+				System.out.println("Check digit > 9");
 				checkDigit=0;
 			}
 			
@@ -95,6 +99,21 @@ public class CheckDigitCalculatorImpl implements CheckDigitCalculator {
 		}
 		
 		return checkDigit;
+	}
+
+
+
+	@Override
+	public boolean isCorrect(int checkDigitCalculated, String containerNr) {
+		
+		if(checkDigitCalculated<0){
+			return false;
+		}
+		char[] containerNumberArray = containerNr.toCharArray();
+		int checkDigit = Integer.parseInt(""+containerNumberArray[containerNumberArray.length-1]);
+		
+		
+		return checkDigitCalculated==checkDigit;
 	}
 
 }

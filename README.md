@@ -1,5 +1,5 @@
 # CCDC
-**(Container check digit calculator)**
+**(Container number validator)**
 
 
 

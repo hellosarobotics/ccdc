@@ -61,8 +61,10 @@ public class CheckDigitCalculatorImpl implements CheckDigitCalculator {
 	@Override
 	public int CalculateCheckDigit(String containerNr) {
 		// TODO Auto-generated method stub
+		
 		char[] containerNumberArray = containerNr.toCharArray();
-		int sum=0, checkDigit=0;
+		int sum=0;
+				//checkDigit=0;
 		
 		try{
 			//Step1 calculation
@@ -86,34 +88,36 @@ public class CheckDigitCalculatorImpl implements CheckDigitCalculator {
 			//Step4
 			int intValueTimes11 = intValue*11;
 			
-			checkDigit = sum-intValueTimes11;
+			sum = sum-intValueTimes11;
 			
-			if(checkDigit>9){
+			if(sum>9){
 				System.out.println("Check digit > 9");
-				checkDigit=0;
+				sum=0;
 			}
 			
 		}catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			sum=-1;
 		}
 		
-		return checkDigit;
+		return sum;
 	}
 
 
 
 	@Override
 	public boolean isCorrect(int checkDigitCalculated, String containerNr) {
-		
-		if(checkDigitCalculated<0){
+		try{
+			if(checkDigitCalculated<0){
+				return false;
+			}
+			char[] containerNumberArray = containerNr.toCharArray();
+			int checkDigit = Integer.parseInt(""+containerNumberArray[containerNumberArray.length-1]);
+			return checkDigitCalculated==checkDigit;
+		}catch (Exception e) {
+			// TODO: handle exception
 			return false;
 		}
-		char[] containerNumberArray = containerNr.toCharArray();
-		int checkDigit = Integer.parseInt(""+containerNumberArray[containerNumberArray.length-1]);
-		
-		
-		return checkDigitCalculated==checkDigit;
 	}
 
 }

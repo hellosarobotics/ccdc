@@ -24,10 +24,10 @@ public class CcdcController {
 	@ApiOperation(value = "Validate the container number.")
 	public boolean canCommunicate( @PathVariable( name = "container_nr" ) String containerNr) {
 		
+		containerNr = containerNr.trim().replace(" ", "");
 		int checkDigitCalculated = cdc.CalculateCheckDigit(containerNr);
-				
+			
 		return cdc.isCorrect(checkDigitCalculated,containerNr);
-		//return true;
 	}
 
 }

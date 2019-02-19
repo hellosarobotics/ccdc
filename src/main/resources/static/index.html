@@ -1,0 +1,109 @@
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Andrea Santopietro">
+    <title>Cover Template · Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+	<link href="/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/cover.css" rel="stylesheet">
+    
+   	<!-- Remember to include jQuery :) -->
+	<script src="js/lib/jquery/3.0.0/jquery.min.js"></script>
+	
+	<!-- jQuery Modal -->
+	<script src="js/lib/jqueryModal/0.9.1/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="js/lib/jqueryModal/0.9.1/jquery.modal.min.css" />
+	
+  </head>
+  
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+	  <header class="masthead mb-auto">
+	    <div class="inner">
+	      <h3 class="masthead-brand">Container Number Validator</h3>
+	      <nav class="nav nav-masthead justify-content-center">
+	        <a class="nav-link active" href="#">Home</a>
+			<!-- <a class="nav-link" href="#">Features</a> -->
+			<!-- <a class="nav-link" href="#">Contact</a> -->
+	      </nav>
+	    </div>
+	  </header>
+
+	  <main role="main" class="inner cover">
+	  	<div class="row justify-content-center">
+	    	<h1 class="cover-heading">Check the container number</h1>
+			<div class="input-group mb-3">
+			  <input id="containerNr" type="text" class="form-control" placeholder="Insert container number" aria-label="Recipient's username" aria-describedby="button-addon2">
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<button id="check" type="button" class="btn btn-info btn-lg">check</button>
+		</div>
+	
+	  </main>
+
+	  <footer class="mastfoot mt-auto">
+	    <div class="inner">
+		<!--<p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p> -->
+	    </div>
+	  </footer>
+	</div>
+	
+	<script type="text/javascript">
+	
+		$("#check").click(function(){
+			//alert($("#containerNr").val());
+			console.log($("#containerNr").val())
+			if($("#containerNr").val()){
+				req($("#containerNr").val());
+			}
+			
+		})
+	
+
+		var req = function(containerNr){
+			$.ajax({
+				type: "GET",
+				url: "v1/ccdc/"+containerNr,
+	  			success: function(msg){
+	  				
+	  				//console.log(msg);
+	  				if(msg){
+	  					console.log("OK")
+	  					$("#ok").modal({ showClose: false});
+	  				}else{
+	  					console.log("KO")
+	  					$("#ko").modal({
+		  				  showClose: false
+		  				});
+	  				}
+	  		  	},
+	  		  	error: function(XMLHttpRequest, textStatus, errorThrown) {
+	  		  		console.log("KO")
+					alert("SERVER ERROR");
+	  		  	}
+			});
+		}
+
+	</script>
+	
+	
+	<!-- Modal HTML embedded directly into document -->
+	<div id="ok" class="modal" style="background-color: #90e6ba;   height: 53px;">
+	  <p>Container number valid.</p>
+	</div>
+	
+	<div id="ko" class="modal" style="background-color: #ff3a3a;  color: white;   height: 53px;">
+	  <p>Container number not valid.</p>
+	</div>
+	
+  </body>
+</html>

@@ -27,9 +27,9 @@ public class SwaggerConfig {
     private ApiInfo metaData() {
     	return new ApiInfoBuilder()
                 .title("Container number validator")
-                .description("Validate the container number using the check digit value.")
-                .license("Created by SA-Robotics.com (@2019)")
-                .licenseUrl("http://www.sa-robotics.com/")
+                .description("Validate the container number.")
+                .license("Created by EasyCloud S.r.l.")
+                .licenseUrl("http://www.easycloudcompany.it/")
                 .build();
     }
 }

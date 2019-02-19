@@ -1,9 +1,9 @@
-# CCDC
+# CNV
 **(Container number validator)**
 
 
 
-This is a spring boot project that enables you to have a rest service that check the correctness of a container number.
+This is a rest service that enables you to check the correctness of a container number.
 
 
 

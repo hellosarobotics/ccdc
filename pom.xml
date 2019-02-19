@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sarobotics</groupId>
-	<artifactId>ccdc</artifactId>
+	<artifactId>cnv</artifactId>
 	<version>0.0.1</version>
 	<name>ccdc</name>
 	<description>Check the correctness of the container number.</description>

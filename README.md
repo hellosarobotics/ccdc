@@ -1,14 +1,10 @@
-# CNV
-**(Container number validator)**
-
-
+# CNV **(Container number validator)**
 
 This is a rest service that enables you to check the correctness of a container number.
 
 
-
 ## IDE
-I've used Ecplise Neon to edit and run this project.
+I've used Ecplise Neon to edit and run this project. Spring Boot Project.
 
 ## Releases
 

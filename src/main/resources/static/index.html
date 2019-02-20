@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Andrea Santopietro">
-    <title>Cover Template · Bootstrap</title>
+    <title>Container Number Validator - by Easy Cloud S.r.l.</title>
 
+	<link rel="shortcut icon" type="image/x-icon" href="img/ec-logo-favicon.png" />
+	
     <!-- Bootstrap core CSS -->
 	<link href="/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -27,21 +29,21 @@
   <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 	  <header class="masthead mb-auto">
-	    <div class="inner">
-	      <h3 class="masthead-brand">Container Number Validator</h3>
-	      <nav class="nav nav-masthead justify-content-center">
-	        <a class="nav-link active" href="#">Home</a>
-			<!-- <a class="nav-link" href="#">Features</a> -->
-			<!-- <a class="nav-link" href="#">Contact</a> -->
-	      </nav>
-	    </div>
+<!-- 	    <div class="inner"> -->
+<!-- 	      <h3 class="masthead-brand">Container Number Validator</h3> -->
+<!-- 	      <nav class="nav nav-masthead justify-content-center"> -->
+<!-- 	        <a class="nav-link active" href="#">Home</a> -->
+<!-- 			<!-- <a class="nav-link" href="#">Features</a> --> 
+<!-- 			<!-- <a class="nav-link" href="#">Contact</a> --> 
+<!-- 	      </nav> -->
+<!-- 	    </div> -->
 	  </header>
 
 	  <main role="main" class="inner cover">
 	  	<div class="row justify-content-center">
-	    	<h1 class="cover-heading">Check the container number</h1>
+	    	<h1 class="cover-heading">Container number validator</h1>
 			<div class="input-group mb-3">
-			  <input id="containerNr" type="text" class="form-control" placeholder="Insert container number" aria-label="Recipient's username" aria-describedby="button-addon2">
+			  <input autofocus id="containerNr" type="text" class="form-control" placeholder="Insert container number" aria-label="Recipient's username" aria-describedby="button-addon2">
 			</div>
 		</div>
 		<div class="row justify-content-center">
@@ -52,7 +54,7 @@
 
 	  <footer class="mastfoot mt-auto">
 	    <div class="inner">
-		<!--<p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p> -->
+		<p>Powered By <a href="http://www.easycloudcompany.it/">Easy Cloud S.r.l.</a></p>
 	    </div>
 	  </footer>
 	</div>
@@ -65,7 +67,7 @@
 			if($("#containerNr").val()){
 				req($("#containerNr").val());
 			}
-			
+			//$( "#containerNr" ).focus();
 		})
 	
 

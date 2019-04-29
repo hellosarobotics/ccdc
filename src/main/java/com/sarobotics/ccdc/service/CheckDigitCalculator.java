@@ -7,5 +7,8 @@ public interface CheckDigitCalculator {
 
 	boolean isCorrect(int checkDigitCalculated, String containerNr);
 
+	int calculateCheckDigitAIR(String containerNr);
+
+
 	
 }

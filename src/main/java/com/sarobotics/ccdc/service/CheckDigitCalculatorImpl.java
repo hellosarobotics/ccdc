@@ -115,9 +115,26 @@ public class CheckDigitCalculatorImpl implements CheckDigitCalculator {
 			int checkDigit = Integer.parseInt(""+containerNumberArray[containerNumberArray.length-1]);
 			return checkDigitCalculated==checkDigit;
 		}catch (Exception e) {
-			// TODO: handle exception
 			return false;
 		}
 	}
+
+
+
+	@Override
+	public int calculateCheckDigitAIR(String containerNr) {
+		String[] airContainer = containerNr.split("-");
+		int serialNumber = Integer.parseInt(airContainer[1].substring(0, 7));
+		int c1 = serialNumber%7;
+		if(c1>6){
+			c1=c1%7;
+		}
+		return c1;
+	}
+
+
+
+
+
 
 }
